@@ -2,7 +2,7 @@
 
 **Instructions:** Work in small groups to complete the following exercises. Try sketching out your work on the whiteboards or scratch paper. Everyone should submit their own answers to the exercises, but you are encouraged to discuss your reasoning with your group members.
 
-Name(s): ___________________________
+Name(s): Timothy Moisio
 
 ---
 
@@ -28,10 +28,10 @@ Procedure Mystery(A, n)
 ```
 
 ### Part A: The Recurrence Relation
-Let $T(n)$ be the running time of `Mystery` on an input of size $n$. Write down a recurrence relation for the worst-case running time $T(n)$. You may assume $n$ is a power of 3 for simplicity. *(Note: You do not need to solve the recurrence relation yet, just formulate it).*
+Let $T(n)$ be the running time of `Mystery` on an input of size $n$. Write down a recurrence relation for the worst-case running time $T(n)$. You may assume $n$ is a power of 3 for simplicity. *(Note: You do not need to solve the recurrence relation yet, just formulate it).* T(n) = T(n/3) + T(n2/3) + O(n)
 
 ### Part B: Visualizing Algorithm Behavior
-Without solving the recurrence, look closely at the recursive calls and the combine step. If you were to draw the recursion tree for this algorithm, what would it look like? Is the tree balanced or skewed? 
+Without solving the recurrence, look closely at the recursive calls and the combine step. If you were to draw the recursion tree for this algorithm, what would it look like? Is the tree balanced or skewed? It would be skewed as one side only has 1/3 while the other has 2/3.
 
 ---
 
@@ -48,9 +48,9 @@ where $c$ is a positive constant.
 
 Analyze the running time of the algorithm by unrolling the recursion tree. Specifically, answer the following questions:
 
-1. **Root Work:** Find the amount of work done at the root level (level $0$) of the recursion tree.
-2. **First Levels:** Find the amount of work done at level $1$ and level $2$ of the recursion tree.
-3. **Tree Height:** Find the height of the recursion tree (at what level does the input size reach $1$?).
+1. **Root Work:** Find the amount of work done at the root level (level $0$) of the recursion tree. T(0) = cn^2
+2. **First Levels:** Find the amount of work done at level $1$ and level $2$ of the recursion tree. T(1) = 3T(n/2), T(2) = 9T(n/4)
+3. **Tree Height:** Find the height of the recursion tree (at what level does the input size reach $1$?). log b(2) of n
 
 **Bonus!** Find a general formula for the total work done at level $i$ of the recursion tree.
 
@@ -60,8 +60,10 @@ Analyze the running time of the algorithm by unrolling the recursion tree. Speci
 
 1. During lecture last week, we looked at two different divide-and-conquer algorithms. What were these algorithms and what problems did they solve?
 
-
+This algorithem divides into 3 parts of unequal data while the ones in the letchers uses 2 parts of nearly indiciated data. These algorithem was merge sort and nearest neghibors, the first sloved sorted a list in log time, and the second allowed to sort neigbor nodes in pairs of closest in space. 
 
 
 
 2. How do the algorithms you analyzed in this lab compare to the ones we discussed in lecture? Specifically, each algorithm differs from the two we discussed in lecture in one important way. For each of the algorithms above, what is that difference?
+
+The difference is that there the data can overlap, or be split unevenly.
